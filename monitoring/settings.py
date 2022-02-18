@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-m2q7kzbqsy!&noa27jw@lu5j2dy@6lr!(ax3whbepl%n#h+xb#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'app-rv-monitoring.herokuapp.com' ]
 
@@ -52,6 +52,17 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "stg_telemetria",
+        "USER": "postgres",
+        "PASSWORD": "postgres",
+        "HOST": "localhost", 
+        "PORT": "5432",      
+    }
+}
 
 ROOT_URLCONF = 'monitoring.urls'
 
@@ -115,11 +126,6 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Parse database configuration from $DATABASE_URL
-import dj_database_url
-
-DATABASES = { 'default': dj_database_url.config()}
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
