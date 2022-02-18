@@ -27,8 +27,7 @@ SECRET_KEY = 'django-insecure-m2q7kzbqsy!&noa27jw@lu5j2dy@6lr!(ax3whbepl%n#h+xb#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'app-rv-monitoring.herokuapp.com' ]
 
 # Application definition
 
@@ -73,16 +72,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'monitoring.wsgi.application'
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-# we only need the engine name, as heroku takes care of the rest
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-    }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
