@@ -1,0 +1,87 @@
+{% extends 'core_base.html' %} 
+{% load static %}
+
+{% block page-header %}
+<div class="page-header">
+    <h1 class="page-title">N/T Henrique Dias</h1>
+</div>
+{% endblock %}
+
+{% block page-content %}
+<div class="page-content container-fluid">
+    <div class="panel nav-tabs-horizontal" data-plugin="tabs">
+        <div class="panel-heading">
+            <h3 class="panel-title">Tabs In The Panel</h3>
+        </div>
+        <ul class="nav nav-tabs nav-tabs-line" role="tablist">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#rpm"
+                aria-controls="rpm" role="tab"><i class="icon md-home" aria-hidden="true"></i>RPM</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#hydraulics"
+                aria-controls="hydraulics" role="tab"><i class="icon md-account" aria-hidden="true"></i>Hydraulics</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#pressure" aria-controls="pressure"
+                role="tab"><i class="icon md-label" aria-hidden="true"></i>Pressure</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#lubrificatorSystem"
+                aria-controls="lubrificatorSystem" role="tab"><i class="icon md-cloud" aria-hidden="true"></i>Lubrificator System</a></li>
+            <li class="dropdown nav-item">
+                <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" aria-expanded="false"
+                aria-haspopup="true">Dropdown </a>
+                <div class="dropdown-menu" role="menu">
+                    <a class="dropdown-item active" data-toggle="tab" href="#rpm" aria-controls="rpm"
+                        role="tab"><i class="icon md-home" aria-hidden="true"></i>RPM</a>
+                    <a class="dropdown-item" data-toggle="tab" href="#hydraulics" aria-controls="hydraulics"
+                        role="tab"><i class="icon md-account" aria-hidden="true"></i>Hydraulics</a>
+                    <a class="dropdown-item" data-toggle="tab" href="#pressure" aria-controls="pressure"
+                        role="tab"><i class="icon md-label" aria-hidden="true"></i>Pressure</a>
+                    <a class="dropdown-item" data-toggle="tab" href="#lubrificatorSystem" aria-controls="lubrificatorSystem"
+                        role="tab"><i class="icon md-cloud" aria-hidden="true"></i>Lubrificator System</a>
+                </div>
+            </li>
+        </ul>
+        <div class="panel-body">
+        <div class="tab-content">
+            <div class="tab-pane active" id="rpm" role="tabpanel">
+                <div class="col-md-6">
+                    <div class="example-wrap">
+                        <h4 class="example-title">Dynamic</h4>
+                        <div class="example">
+                            <div class="gauge" id="exampleDynamicGauge" data-plugin="gauge" data-value="870"
+                            data-max-value="1000" data-stroke-color="#e91e63">
+                                <div class="gauge-label"></div>
+                                <canvas width="200" height="150"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="hydraulics" role="tabpanel">
+                Protervi dissensio consuetudine equos publicam ingenia. Voluptatibus legendus initia
+                confirmare sententiam. Desistunt possint habeatur dediti dubio,
+                triarium is offendimur reprehenderit exercitus laudabilis motus
+                celeritas, utrum dissentio renovata, habet partus natus. Iustius
+                disserunt, quantum ennii admodum divinum mortem elaborare primum
+                autem.
+            </div>
+            <div class="tab-pane" id="pressure" role="tabpanel">
+                Incurrunt latinam, faciendi dedecora evertitur delicatissimi, afficit noctesque
+                detracta illustriora epicurum contenta rogatiuncula dolores
+                perspecta indocti, eveniunt confirmatur tractat consuevit durissimis
+                iuvaret coercendi familiarem. Dolere prima fortunae intellegamus
+                vix porro huic errorem molestum, graecos deinde effugiendorum
+                aliter appetendum afferrent eosdem.
+            </div>
+            <div class="tab-pane" id="lubrificatorSystem" role="tabpanel">
+                Dediti iniuste vitae dedecora victi, pueros vulgo adhibenda at gravis epicurus
+                alii facerem, aetatis. Rectas, splendide sensus ruinae dolendum
+                audire ipse, loca mollis manilium concordia depravate congressus
+                fruenda. Nocet magna tradere hunc grata gloriosis animus dum
+                consumere gravissimas. Erunt alii.
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static "/js/dashboard.js" %}"></script>
+{% endblock %}
