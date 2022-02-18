@@ -9,8 +9,8 @@ from django.db import models
 from rest_framework import serializers
 
 class Telemetria(models.Model):
-    p_id = models.AutoField(db_column='p_Id', primary_key=True)  # Field name made lowercase.
-    atime = models.DateTimeField(db_column='Atime')  # Field name made lowercase.
+    p_id = models.BigAutoField(primary_key=True)  # Field name made lowercase.
+    atime = models.DateTimeField(blank=True, null=True)  # Field name made lowercase.
     ano = models.FloatField(blank=True, null=True)
     mes = models.FloatField(blank=True, null=True)
     dia = models.IntegerField(blank=True, null=True)
@@ -23,19 +23,19 @@ class Telemetria(models.Model):
     ind = models.IntegerField(blank=True, null=True)
     indst = models.IntegerField(blank=True, null=True)
     indsuf = models.IntegerField(blank=True, null=True)
-    spsetecr = models.FloatField(db_column='spsetECR', blank=True, null=True)  # Field name made lowercase.
-    spsetbrd = models.FloatField(db_column='spsetBRD', blank=True, null=True)  # Field name made lowercase.
+    spsetecr = models.FloatField(blank=True, null=True)  # Field name made lowercase.
+    spsetbrd = models.FloatField(blank=True, null=True)  # Field name made lowercase.
     scav = models.FloatField(blank=True, null=True)
     psca = models.FloatField(blank=True, null=True)
     pcor = models.FloatField(blank=True, null=True)
     pmor = models.FloatField(blank=True, null=True)
     insul = models.FloatField(blank=True, null=True)
     carga = models.FloatField(blank=True, null=True)
-    pi1 = models.FloatField(db_column='Pi1', blank=True, null=True)  # Field name made lowercase.
-    pi2 = models.FloatField(db_column='Pi2', blank=True, null=True)  # Field name made lowercase.
-    pi3 = models.FloatField(db_column='Pi3', blank=True, null=True)  # Field name made lowercase.
-    pi4 = models.FloatField(db_column='Pi4', blank=True, null=True)  # Field name made lowercase.
-    pi5 = models.FloatField(db_column='Pi5', blank=True, null=True)  # Field name made lowercase.
+    pi1 = models.FloatField(blank=True, null=True)  # Field name made lowercase.
+    pi2 = models.FloatField(blank=True, null=True)  # Field name made lowercase.
+    pi3 = models.FloatField(blank=True, null=True)  # Field name made lowercase.
+    pi4 = models.FloatField(blank=True, null=True)  # Field name made lowercase.
+    pi5 = models.FloatField(blank=True, null=True)  # Field name made lowercase.
     pi6 = models.FloatField(blank=True, null=True)
     piavg = models.FloatField(blank=True, null=True)
     pidev1 = models.FloatField(blank=True, null=True)
@@ -56,12 +56,12 @@ class Telemetria(models.Model):
     ofpi4l = models.FloatField(blank=True, null=True)
     ofpi5l = models.FloatField(blank=True, null=True)
     ofpi6l = models.FloatField(blank=True, null=True)
-    pc1 = models.FloatField(db_column='Pc1', blank=True, null=True)  # Field name made lowercase.
-    pc2 = models.FloatField(db_column='Pc2', blank=True, null=True)  # Field name made lowercase.
-    pc3 = models.FloatField(db_column='Pc3', blank=True, null=True)  # Field name made lowercase.
-    pc4 = models.FloatField(db_column='Pc4', blank=True, null=True)  # Field name made lowercase.
-    pc5 = models.FloatField(db_column='Pc5', blank=True, null=True)  # Field name made lowercase.
-    pc6 = models.FloatField(db_column='Pc6', blank=True, null=True)  # Field name made lowercase.
+    pc1 = models.FloatField(blank=True, null=True)  # Field name made lowercase.
+    pc2 = models.FloatField(blank=True, null=True)  # Field name made lowercase.
+    pc3 = models.FloatField(blank=True, null=True)  # Field name made lowercase.
+    pc4 = models.FloatField(blank=True, null=True)  # Field name made lowercase.
+    pc5 = models.FloatField(blank=True, null=True)  # Field name made lowercase.
+    pc6 = models.FloatField(blank=True, null=True)  # Field name made lowercase.
     pcavg = models.FloatField(blank=True, null=True)
     pcdev1 = models.FloatField(blank=True, null=True)
     pcdev2 = models.FloatField(blank=True, null=True)
@@ -88,12 +88,12 @@ class Telemetria(models.Model):
     evdcl4 = models.FloatField(blank=True, null=True)
     evdcl5 = models.FloatField(blank=True, null=True)
     evdcl6 = models.FloatField(blank=True, null=True)
-    pm1 = models.FloatField(db_column='Pm1', blank=True, null=True)  # Field name made lowercase.
-    pm2 = models.FloatField(db_column='Pm2', blank=True, null=True)  # Field name made lowercase.
-    pm3 = models.FloatField(db_column='Pm3', blank=True, null=True)  # Field name made lowercase.
-    pm4 = models.FloatField(db_column='Pm4', blank=True, null=True)  # Field name made lowercase.
-    pm5 = models.FloatField(db_column='Pm5', blank=True, null=True)  # Field name made lowercase.
-    pm6 = models.FloatField(db_column='Pm6', blank=True, null=True)  # Field name made lowercase.
+    pm1 = models.FloatField(blank=True, null=True)  # Field name made lowercase.
+    pm2 = models.FloatField(blank=True, null=True)  # Field name made lowercase.
+    pm3 = models.FloatField(blank=True, null=True)  # Field name made lowercase.
+    pm4 = models.FloatField(blank=True, null=True)  # Field name made lowercase.
+    pm5 = models.FloatField(blank=True, null=True)  # Field name made lowercase.
+    pm6 = models.FloatField(blank=True, null=True)  # Field name made lowercase.
     pmavg = models.FloatField(blank=True, null=True)
     pmdev1 = models.FloatField(blank=True, null=True)
     pmdev2 = models.FloatField(blank=True, null=True)
