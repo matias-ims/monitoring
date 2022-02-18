@@ -1,0 +1,73 @@
+{% extends 'core_base.html' %} 
+{% load static %}
+
+{% block page-header %}
+<div class="page-header">
+    <h1 class="page-title">N/T Henrique Dias</h1>
+</div>
+{% endblock %}
+
+{% block page-content %}
+<div class="page-content container-fluid">
+    <input type="hidden" id="objId" value="{{ telemetria.p_id }}">
+    <div class="panel nav-tabs-horizontal" data-plugin="tabs">
+        <div class="panel-heading">
+            <h3 class="panel-title"></h3>
+        </div>
+        <ul class="nav nav-tabs nav-tabs-line" role="tablist">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#rpm"
+                aria-controls="rpm" role="tab"><i class="icon md-home" aria-hidden="true"></i>RPM</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#hydraulics"
+                aria-controls="hydraulics" role="tab"><i class="icon md-account" aria-hidden="true"></i>Hydraulics</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#pressure" aria-controls="pressure"
+                role="tab"><i class="icon md-label" aria-hidden="true"></i>Pressure</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#lubrificatorSystem"
+                aria-controls="lubrificatorSystem" role="tab"><i class="icon md-cloud" aria-hidden="true"></i>Lubrificator System</a></li>
+        </ul>
+        <div class="panel-body">
+        <div class="tab-content">
+            <div class="tab-pane active" id="rpm" role="tabpanel">
+                <div class="row">
+                <div class="col-md-6">
+                    <div class="example-wrap">
+                        <div class="example">
+                            <div class="gauge gauge-lg" id="rpmGauge" data-plugin="gauge" data-value="{{ telemetria.rpm }}"
+                            data-max-value="98" data-stroke-color="#e91e63">
+                                <div class="gauge-label"></div>
+                                <canvas width="200" height="150"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <!-- RPM -->
+                    <div class="example-wrap">
+                      <div class="example rickshaw-wrap">
+                        <div id="rpmChart"></div>
+                        <div class="rickshaw-legend-wrap">
+                          <div id="rpmChartLegend"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- RPM -->
+                </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="hydraulics" role="tabpanel">
+            </div>
+            <div class="tab-pane" id="pressure" role="tabpanel">
+            </div>
+            <div class="tab-pane" id="lubrificatorSystem" role="tabpanel">
+            </div>
+        </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static "/js/dashboard.js" %}"></script>
+<!-- <script src="../../assets/examples/js/charts/rickshaw.js"></script> -->
+
+{% endblock %}
